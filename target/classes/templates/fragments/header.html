@@ -1,0 +1,32 @@
+<!-- https://www.youtube.com/watch?v=VRrEquQfh88 -->
+<!-- https://www.youtube.com/watch?v=U8smiWQ8Seg -->
+<!DOCTYPE html>
+<html  lang="en"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <link rel="stylesheet" th:href="@{/css/header.css}">
+</head>
+<body>
+  <header>
+    <a href="/" class="logo"><span>Learn Sphere</span>
+    </a>
+
+    <ul class="navbar">
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="#" >About</a></li>
+      <li><a href="#" >Contact</a></li>
+    </ul>
+
+    <div class="main">
+      <!-- <img class="icn" th:src="@{/images/login-avatar.png}" alt="login avatar" /> -->
+      <a href="/login" class="user">Sign In</a>
+      <a href="/registration">Register</a>
+      <div class="" id="menu-icon">
+        <img class="icn change" th:src="@{/images/menu.png}" alt="login avatar" />
+      </div>
+    </div>
+  </header>
+  <script th:src="@{/js/header.js}"></script>
+</body>
+</html>

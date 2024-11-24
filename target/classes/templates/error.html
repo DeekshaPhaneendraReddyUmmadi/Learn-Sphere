@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            background-color: #f8d7da;
+            color: #721c24;
+            text-align: center;
+            padding: 50px;
+        } */
+        h1 {
+            font-size: 2.5rem;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+        a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+    </style>
+    <head th:replace="~{/fragments/head :: head}"></head>
+</head>
+<body>
+    <nav>
+        <header th:replace="~{/fragments/header :: header}"></header>
+    </nav>
+    <h1>Oops! Something went wrong.</h1>
+    <p>We couldn't process your request. Please try again later.</p>
+    <p><a href="/">Go back to Home</a></p>
+
+    <footer th:replace="~{/fragments/footer :: footer}"></footer>
+</body>
+</html>

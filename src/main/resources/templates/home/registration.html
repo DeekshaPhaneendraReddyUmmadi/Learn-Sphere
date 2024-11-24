@@ -1,0 +1,63 @@
+<!-- <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <form action="#"
+        th:action="@{/user/register}"
+        th:object="${Users}"
+        method="post">
+
+    </form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <head th:replace="~{/fragments/head :: head}"></head>
+</head>
+<body>
+    <header th:replace="~{/fragments/header :: header}"></header>
+    <div class="form">
+        <form id="registrationForm">
+            <h1>Register</h1>
+            <label for="password">Name :</label><br>
+            <input type="text" name="name" placeholder="Name" required /><br>
+
+            <label for="password">Email :</label><br>
+            <input type="email" name="email" placeholder="Email" required /><br>
+            
+            <label for="password">Password :</label><br>
+            <input type="password" name="password" placeholder="Password" required /><br>
+            
+
+            <p>Role</p>
+            <div class="radio-group">
+                <input type="radio" name="role" id="student" value="STUDENT">
+                <label for="student">Student</label>
+                
+                <input type="radio" name="role" id="trainer" value="TRAINER">
+                <label for="trainer">Trainer</label>
+            </div>
+
+            <!-- <input type="radio" name="role" id="student" value="Student" >
+            <label for="student">Student</label>
+            <input type="radio" name="role" id="trainer" value="Trainer">
+            <label for="trainer">Trainer</label> -->
+            
+
+            <button class="r-btn" type="submit">Register</button>
+        </form>
+    </div>
+
+    <div id="message"></div>
+    <footer th:replace="~{/fragments/footer :: footer}"></footer>
+</body>
+</html>

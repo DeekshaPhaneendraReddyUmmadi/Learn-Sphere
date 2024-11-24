@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{/fragments/head :: head}"></head>
+<body>
+
+    <nav>
+        <header th:replace="~{/fragments/header :: header}"></header>
+    </nav>
+    <!-- <br><br><br><br> -->
+    <!-- <br><br><br><br> -->
+    <!-- <div class="body">
+        <a href="/home/registration">Register</a>
+
+    </div> -->
+
+    <div class="hero">
+        <h2>Empowering Your Learning Journey</h2>
+    </div>
+    
+    <section class="features">
+        <div class="feature">
+            <h3>Interactive Courses</h3>
+            <p>Engage with interactive content designed to enhance your learning experience.</p>
+        </div>
+        <div class="feature">
+            <h3>Expert Trainers</h3>
+            <p>Learn from industry experts who are passionate about teaching.</p>
+        </div>
+        <div class="feature">
+            <h3>Flexible Learning</h3>
+            <p>Access courses anytime, anywhere, and learn at your own pace.</p>
+        </div>
+    </section>
+    
+    <!-- <section class="testimonials">
+        <h2>What Our Students Say</h2>
+        <div class="testimonial">
+            <p>"LearnSphere has transformed my learning experience. The courses are engaging and informative!"</p>
+            <p>- Jane Doe</p>
+        </div>
+        <div class="testimonial">
+            <p>"The flexibility of learning at my own pace has been a game changer for me!"</p>
+            <p>- John Smith</p>
+        </div>
+    </section> -->
+    
+    <section class="cta">
+        <h2>Join Us Today!</h2>
+        <p>Sign up now to start your learning journey with LearnSphere.</p>
+        <a href="/registration" style="color: #fff; text-decoration: underline;">Register Now</a>
+        <p>Already have an account? <a href="/login" style="color: #fff; text-decoration: underline;">Login here</a></p>
+    </section>
+
+
+    <!-- <br><br> -->
+    <footer th:replace="~{/fragments/footer :: footer}"></footer>
+</body>
+</html>
