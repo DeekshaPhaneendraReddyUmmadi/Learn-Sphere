@@ -1,5 +1,3 @@
-<!-- https://www.youtube.com/watch?v=VRrEquQfh88 -->
-<!-- https://www.youtube.com/watch?v=U8smiWQ8Seg -->
 <!DOCTYPE html>
 <html  lang="en"
 xmlns:th="http://www.thymeleaf.org"
@@ -19,9 +17,12 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     </ul>
 
     <div class="main">
-      <!-- <img class="icn" th:src="@{/images/login-avatar.png}" alt="login avatar" /> -->
-      <a href="/login" class="user">Sign In</a>
-      <a href="/registration">Register</a>
+      <span sec:authorize="!isAuthenticated()">
+        <a href="/login" class="user">Sign In</a>
+      </span>
+      <span sec:authorize="!isAuthenticated()">
+        <a href="/register">Register</a>
+      </span>
       <div class="" id="menu-icon">
         <img class="icn change" th:src="@{/images/menu.png}" alt="login avatar" />
       </div>

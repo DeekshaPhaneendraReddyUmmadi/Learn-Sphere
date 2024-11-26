@@ -6,16 +6,12 @@
 body {
   min-height: 100vh;
   text-decoration: none;
-  /* padding-top: 12vh; */
 }
 
 :root {
   --bg-color: #000000;
   --text-color: #fff;
   --main-color: #676767;
-  /* --bg-color: #272a38;
-  --text-color: #fff;
-  --main-color: #29fd53; */
 }
 
 header {
@@ -30,18 +26,13 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 10vh;
-  padding: 28px 12%;
+  padding: 28px 11%;
   transition: all 0.5s ease;
 }
 
 header .logo {
   text-decoration: none;
 }
-
-/* .logo {
-  display: flex;
-  align-items: center;
-} */
 
 .logo span {
   color: var(--text-color);
@@ -83,6 +74,7 @@ ul.navbar {
 .main {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .main a {
@@ -99,7 +91,6 @@ ul.navbar {
 .user {
   display: flex;
   font-size: 28px;
-  margin-right: 7px;
 }
 
 .main a:hover {
@@ -142,7 +133,6 @@ ul.navbar {
   .logo span {
     font-size: 1.45rem;
     font-weight: 700;
-    /* padding-left: 70px; */
   }
 
   .navbar a {
@@ -163,10 +153,6 @@ ul.navbar {
     font-weight: 700;
   }
 
-  /* body {
-    padding-top: 10vh;
-  } */
-
   header {
     height: 90px;
     justify-content: right;
@@ -177,14 +163,10 @@ ul.navbar {
   }
 
   .navbar {
-    /* position: fixed; */
-    /* color: var(--bg-color); */
     top: 180px;
     right: -90%;
     height: 300px;
-    /* background: rgb(255, 255, 255); */
     background: var(--bg-color);
-    /* backdrop-filter: blur(10px); */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -230,7 +212,6 @@ ul.navbar {
   }
 
   .navbar {
-    /* position: fixed; */
     top: 180px;
     right: -100%;
     height: 300px;

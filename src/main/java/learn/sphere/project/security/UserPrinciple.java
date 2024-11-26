@@ -8,21 +8,21 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import learn.sphere.project.model.Users;
+import learn.sphere.project.model.Account;
 import learn.sphere.project.util.constant.Role;
 
 public class UserPrinciple implements UserDetails {
 
     @Autowired
-    private Users user;
+    private Account user;
 
-    public UserPrinciple(Users user) {
+    public UserPrinciple(Account user) {
         this.user = user;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singleton(new SimpleGrantedAuthority(Role.USER.toString()));
+        return Collections.singleton(new SimpleGrantedAuthority("ROLE_" +user.getRole()));
     }
 
     @Override
@@ -32,7 +32,10 @@ public class UserPrinciple implements UserDetails {
 
     @Override
     public String getUsername() {
-        return user.getName();
+        return user.getEmail();
     }
 
+    public Role getRoles() {
+        return user.getRole();
+    }
 }

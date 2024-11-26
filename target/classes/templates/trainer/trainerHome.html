@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainer</title>
+    <head th:replace="~{/fragments/head :: head}"></head>
+    <style>
+        .trainerlist{
+            /* display: flex; */
+            padding-top: 100px  ;
+            align-items: center;
+            height: 73vh;
+        }
+        li{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header th:replace="~{/fragments/header :: header}"></header>
+            <ul class="trainerlist">
+                <li>Welcome Trainer</li><br>
+                <li>Add Course</li><br>
+                <li>Add Lesson</li><br>
+                <li>View Course</li>
+            </ul><br>
+    <footer th:replace="~{/fragments/footer :: footer}"></footer>
+</body>
+</html>

@@ -4,12 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-// import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -27,19 +25,24 @@ public class SecurityConfig {
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers( "/", "/h2/**", "/user/register", "/css/**", "/js/**", "/images/**", "/registration", "/login", "/error").permitAll()
-                // .requestMatchers("/user/**").authenticated()
+                .requestMatchers( "/", "/h2/**", "/user/register", "/css/**", "/js/**", 
+                                                "/images/**", "/register", "/login", "/error" ,
+                                                "/trainer/**").permitAll()
+                .requestMatchers("/student/**").hasAnyRole("STUDENT","ADMIN")
+                .requestMatchers("/trainer/**").hasAnyRole("TRAINER", "ADMIN")
+                .requestMatchers("/admin/**").hasRole("ADMIN")
+                .requestMatchers("/redirect").authenticated()
                 .anyRequest().authenticated()
             )
-            // .httpBasic(Customizer.withDefaults())
             .formLogin(login -> 
                 login.loginPage("/login")
                      .permitAll()
-                     .defaultSuccessUrl("/", true)
-                     .failureUrl("/login?error=true")
+                     .usernameParameter("email")
+                     .passwordParameter("password")
+                     .defaultSuccessUrl("/redirect", true)
+                     .failureUrl("/login")
             )
             .csrf(csrf -> csrf.disable())
-            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .headers(headers -> headers.frameOptions(frame -> frame.disable()));
         return http.build();
     }
@@ -48,7 +51,6 @@ public class SecurityConfig {
     public AuthenticationProvider authenticationProvider(){
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setPasswordEncoder(passwordEncoder());
-        // provider.setPasswordEncoder(NoOpPasswordEncoder.getInstance());
         provider.setUserDetailsService(myUserDetailsService);
         return provider;
     }

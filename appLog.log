@@ -1,0 +1,33 @@
+2024-11-26 17:00:34,396 [level] learn.sphere.project.ProjectApplication [restartedMain] Starting ProjectApplication using Java 21.0.2 with PID 106424 (C:\Users\phane\Desktop\internship\kodnest\projects\project - Copy\target\classes started by phane in C:\Users\phane\Desktop\internship\kodnest\projects\project - Copy)
+2024-11-26 17:00:34,399 [level] learn.sphere.project.ProjectApplication [restartedMain] Running with Spring Boot v3.3.6, Spring v6.1.15
+2024-11-26 17:00:34,400 [level] learn.sphere.project.ProjectApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2024-11-26 17:00:34,477 [level] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-26 17:00:34,478 [level] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-26 17:00:35,823 [level] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-26 17:00:35,985 [level] org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 139 ms. Found 1 JPA repository interface.
+2024-11-26 17:00:37,189 [level] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2024-11-26 17:00:37,231 [level] org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2024-11-26 17:00:37,233 [level] org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-11-26 17:00:37,359 [level] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-11-26 17:00:37,360 [level] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2881 ms
+2024-11-26 17:00:37,429 [level] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-11-26 17:00:37,770 [level] com.zaxxer.hikari.pool.HikariPool [restartedMain] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:sphere user=SA
+2024-11-26 17:00:37,775 [level] com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-11-26 17:00:37,797 [level] org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2'. Database available at 'jdbc:h2:mem:sphere'
+2024-11-26 17:00:38,086 [level] org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-26 17:00:38,207 [level] org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-26 17:00:38,260 [level] org.hibernate.cache.internal.RegionFactoryInitiator [restartedMain] HHH000026: Second-level cache disabled
+2024-11-26 17:00:38,786 [level] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-26 17:00:38,869 [level] org.hibernate.orm.deprecation [restartedMain] HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-26 17:00:39,988 [level] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-26 17:00:40,054 [level] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-26 17:00:40,678 [level] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-26 17:00:40,750 [level] org.springframework.security.config.annotation.authentication.configuration.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer [restartedMain] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-11-26 17:00:40,751 [level] org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer [restartedMain] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-11-26 17:00:41,828 [level] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-11-26 17:00:41,899 [level] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port 8080 (http) with context path '/'
+2024-11-26 17:00:41,915 [level] learn.sphere.project.ProjectApplication [restartedMain] Started ProjectApplication in 8.142 seconds (process running for 8.742)
+2024-11-26 17:00:43,450 [level] learn.sphere.project.ProjectApplication [restartedMain] Spring boot application is started.
+2024-11-26 17:01:05,549 [level] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-9] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-26 17:01:05,551 [level] org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-9] Initializing Servlet 'dispatcherServlet'
+2024-11-26 17:01:05,556 [level] org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-9] Completed initialization in 2 ms

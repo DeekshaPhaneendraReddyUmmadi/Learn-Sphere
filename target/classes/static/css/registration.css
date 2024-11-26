@@ -31,16 +31,16 @@ input {
 
 .radio-group {
     display: flex;
-    justify-content: center; /* Center the radio buttons */
-    margin-bottom: 15px; /* Space below the radio group */
+    justify-content: center;
+    margin-bottom: 15px;
 }
 
 .radio-group input[type="radio"] {
-    margin-right: 5px; /* Space between radio button and label */
+    margin-right: 5px;
 }
 
 .radio-group label {
-    margin-right: 20px; /* Space between radio options */
+    margin-right: 20px;
 }
 
 .r-btn {
