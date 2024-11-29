@@ -1,54 +1,24 @@
-package learn.sphere.project.controller;
+package learn.sphere.project.controller.controllers;
 
 import java.security.Principal;
 import java.util.Optional;
 
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import learn.sphere.project.model.Account;
+import learn.sphere.project.model.Course;
+import learn.sphere.project.model.Lesson;
 import learn.sphere.project.service.UsersService;
 
 @Controller
-public class HomeController {
+public class CourseController {
 
     @Autowired
     private UsersService usersService;
-
-    @GetMapping("/")
-    public String home(){
-        return "/home/index";
-    }
-    
-    @GetMapping("/login")
-    public String login() {
-        return "/home/login";
-    }
-    
-    @GetMapping("/error")
-    public String error(Model model) {
-        return "/error";
-    }
-
-    @GetMapping("/register")
-    public String register(Model model) {
-        Account user = new Account();
-        model.addAttribute("user", user);
-        return "/home/registration";
-    }
-
-    @PostMapping("/register")
-    public String register_user(@ModelAttribute Account user, BindingResult result) {
-            usersService.save(user);
-            return "redirect:/";
-    }
-    
 
     @GetMapping("/student")
     @PreAuthorize("isAuthenticated()")
@@ -61,7 +31,7 @@ public class HomeController {
             if(optionalAccount.isPresent()) {
                 Account account = optionalAccount.get();
                 model.addAttribute( "account", account);
-                return  "/student/studentHome";
+                return  "/course/student/studentHome";
         }else{
             return "redirect:/?error";
         }
@@ -80,7 +50,7 @@ public class HomeController {
                 Account account = optionalAccount.get();
                 System.out.println(account.toString());
                 model.addAttribute( "account", account);
-                return  "/trainer/trainerHome";
+                return  "/course/trainer/trainerHome";
         }else{
             return "redirect:/error";
         }
@@ -97,12 +67,11 @@ public class HomeController {
             if(optionalAccount.isPresent()) {
                 Account account = optionalAccount.get();
                 model.addAttribute( "account", account);
-                return  "/admin/adminHome";
+                return  "/course/admin/adminHome";
         }else{
             return "redirect:/?error";
         }
     }
-    
 
     @GetMapping("/redirect")
     public String redirectBasedOnRole(Principal principal) {
@@ -114,7 +83,7 @@ public class HomeController {
         Optional<Account> optionalAccount = usersService.getDetailsByEmail(authUser);
         if(optionalAccount.isPresent()) {
             Account user = optionalAccount.get();
-
+            
             if (user != null) {
                 switch (user.getRole()) {
                     case ADMIN:
@@ -132,5 +101,19 @@ public class HomeController {
             }
         }
         return "redirect:" + redirectUrl;
+    }
+
+    @GetMapping("/createCourse")
+    public String course(Model model) {
+        Course course = new Course();
+        model.addAttribute("course", course);
+        return "/course/trainer/courseregister";
+    }
+
+    @GetMapping("/createLesson")
+    public String lesson(Model model) {
+        Lesson lesson = new Lesson();
+        model.addAttribute("lesson", lesson);
+        return "/course/trainer/lessonregister";
     }
 }

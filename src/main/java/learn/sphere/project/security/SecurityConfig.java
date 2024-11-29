@@ -25,16 +25,16 @@ public class SecurityConfig {
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers( "/", "/h2/**", "/user/register", "/css/**", "/js/**", 
-                                                "/images/**", "/register", "/login", "/error" ,
-                                                "/trainer/**").permitAll()
+                .requestMatchers(   "/", "/h2/**", "/css/**", "/js/**", 
+                                                "/images/**", "/error",
+                                                "/api/user/v1/**", "/api/course/v1/**", "/register").permitAll()
                 .requestMatchers("/student/**").hasAnyRole("STUDENT","ADMIN")
                 .requestMatchers("/trainer/**").hasAnyRole("TRAINER", "ADMIN")
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 .requestMatchers("/redirect").authenticated()
                 .anyRequest().authenticated()
             )
-            .formLogin(login -> 
+            .formLogin(login ->
                 login.loginPage("/login")
                      .permitAll()
                      .usernameParameter("email")
@@ -44,6 +44,7 @@ public class SecurityConfig {
             )
             .csrf(csrf -> csrf.disable())
             .headers(headers -> headers.frameOptions(frame -> frame.disable()));
+            // .httpBasic(Customizer.withDefaults());
         return http.build();
     }
 

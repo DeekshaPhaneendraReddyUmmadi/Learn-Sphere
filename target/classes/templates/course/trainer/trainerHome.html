@@ -7,7 +7,6 @@
     <head th:replace="~{/fragments/head :: head}"></head>
     <style>
         .trainerlist{
-            /* display: flex; */
             padding-top: 100px  ;
             align-items: center;
             height: 73vh;
@@ -21,9 +20,9 @@
     <header th:replace="~{/fragments/header :: header}"></header>
             <ul class="trainerlist">
                 <li>Welcome Trainer</li><br>
-                <li>Add Course</li><br>
-                <li>Add Lesson</li><br>
-                <li>View Course</li>
+                <li><a href="/createCourse">Add Course</a></li><br>
+                <li><a href="/createLesson">Add Lesson</a></li><br>
+                <li><a href="#">View Course</a></li>
             </ul><br>
     <footer th:replace="~{/fragments/footer :: footer}"></footer>
 </body>

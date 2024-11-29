@@ -163,6 +163,7 @@ ul.navbar {
   }
 
   .navbar {
+    position: fixed;
     top: 180px;
     right: -90%;
     height: 300px;
@@ -212,6 +213,7 @@ ul.navbar {
   }
 
   .navbar {
+    position: fixed;
     top: 180px;
     right: -100%;
     height: 300px;

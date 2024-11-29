@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Registration</title>
+    <head th:replace="~{/fragments/head :: head}"></head>
+</head>
+<body>
+    <header th:replace="~{/fragments/header :: header}"></header>
+    <div class="form">
+        <form id="registrationForm" >
+            <h1>Create a new Lesson</h1>
+            <label for="courseId">Course ID</label><br>
+            <input type="text" name="courseId" id="courseId" placeholder="Course ID" required /><br>
+            
+            <label for="lessonId">Course ID</label><br>
+            <input type="text" name="lessonId" id="lessonId" placeholder="Lesson ID" required /><br>
+
+            <label for="lessonName">Lesson Name</label><br>
+            <input type="text" name="lessonName" id="lessonName" placeholder="Lesson Name" required /><br>
+            
+            <label for="lessonTopics">Lesson Topic</label><br>
+            <input type="text" name="lessonTopics" id="lessonTopics" placeholder="Lesson Topic" required /><br>
+            
+            <label for="lessonLink">Lesson Video Link</label><br>
+            <input type="number" name="lessonLink" placeholder="Lesson Link" required /><br>
+
+            <button class="r-btn" type="submit">Add Lesson</button>
+        </form>
+    </div>
+
+    <div id="message"></div>
+    <footer th:replace="~{/fragments/footer :: footer}"></footer>
+</body>
+</html>

@@ -9,12 +9,10 @@ import jakarta.validation.constraints.NotEmpty;
 import learn.sphere.project.util.constant.Role;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @Data
 @Entity
 @NoArgsConstructor
-@ToString
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -31,7 +29,7 @@ public class Account {
     private String password;
 
     private Role role;
-    
+
     public Account(String name, String email, String password, Role role) {
         this.name = name;
         this.email = email;

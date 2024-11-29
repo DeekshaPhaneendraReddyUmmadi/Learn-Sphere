@@ -9,19 +9,16 @@
 <body>
     <header th:replace="~{/fragments/header :: header}"></header>
     <div class="form">
-        <form id="registrationForm" 
-                action="#"
-                th:action="@{/register}"
-                method="post">
+        <form id="registrationForm">
             <h1>Register</h1>
-            <label for="password">Name :</label><br>
-            <input type="text" name="name" placeholder="Name" required /><br>
+            <label for="name">Name :</label><br>
+            <input type="text" name="name" id="name" placeholder="Name" required /><br>
 
-            <label for="password">Email :</label><br>
-            <input type="email" name="email" placeholder="Email" required /><br>
+            <label for="email">Email :</label><br>
+            <input type="email" name="email" id="email" placeholder="Email" required /><br>
             
             <label for="password">Password :</label><br>
-            <input type="password" name="password" placeholder="Password" required /><br>
+            <input type="password" name="password" id="password" placeholder="Password" required /><br>
             
 
             <p>Role</p>
@@ -39,5 +36,6 @@
 
     <div id="message"></div>
     <footer th:replace="~{/fragments/footer :: footer}"></footer>
+    <script th:src="@{/js/registration.js}"></script>
 </body>
 </html>
