@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             try {
-                const response = await fetch('/api/user/v1/register', {
+                const response = await fetch('/rest-api/user/v1/register', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

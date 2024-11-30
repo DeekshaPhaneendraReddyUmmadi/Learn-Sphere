@@ -8,7 +8,7 @@ document.getElementById('courseregister').addEventListener('submit', async funct
     
 
     try {
-        const response = await fetch('/api/course/v1/createCourse', {
+        const response = await fetch('/rest-api/course/v1/createCourse', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -17,6 +17,7 @@ document.getElementById('courseregister').addEventListener('submit', async funct
         });
 
         if (response.ok) {
+            alert("Course Added Successfully!");
             window.location.href = '/redirect';
         } else {
             const error = await response.text();

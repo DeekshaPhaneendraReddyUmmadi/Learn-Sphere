@@ -1,6 +1,7 @@
 package learn.sphere.project.controller.controllers;
 
 import java.security.Principal;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,16 +10,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+// import learn.sphere.project.dto.CourseLessonDto;
 import learn.sphere.project.model.Account;
 import learn.sphere.project.model.Course;
 import learn.sphere.project.model.Lesson;
+import learn.sphere.project.service.CourseLessonService;
 import learn.sphere.project.service.UsersService;
+import learn.sphere.project.dto.CourseLessonDto;
 
 @Controller
 public class CourseController {
 
     @Autowired
     private UsersService usersService;
+
+    @Autowired
+    private CourseLessonService courseLessonService;
 
     @GetMapping("/student")
     @PreAuthorize("isAuthenticated()")
@@ -116,4 +123,20 @@ public class CourseController {
         model.addAttribute("lesson", lesson);
         return "/course/trainer/lessonregister";
     }
+
+    @GetMapping("/courses")
+    public String getCourses(Model model) {
+        List<CourseLessonDto> courses = courseLessonService.getAllCoursesWithLessons();
+        model.addAttribute("courses", courses);
+        // model.addAttribute("text", "hello world!");
+        return "/course/trainer/courseList"; // The name of your HTML file without the .html extension
+    }
+
+    // @GetMapping("/list")
+    // public String getCourseslist(Model model) {
+    //     // List<CourseLessonDto> courses = courseLessonService.getAllCoursesWithLessons();
+    //     // model.addAttribute("courses", courses);
+    //     // model.addAttribute("text", "hello world!");
+    //     return "/course/trainer/courseList"; // The name of your HTML file without the .html extension
+    // }
 }

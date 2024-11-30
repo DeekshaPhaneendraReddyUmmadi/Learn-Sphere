@@ -14,7 +14,7 @@ import learn.sphere.project.model.Account;
 import learn.sphere.project.service.UsersService;
 
 @Controller
-@RequestMapping("/api/user/v1")
+@RequestMapping("/rest-api/user/v1")
 public class UsersRestController {
 
     // @Autowired

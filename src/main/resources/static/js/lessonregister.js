@@ -1,15 +1,18 @@
-document.getElementById('courseregister').addEventListener('submit', async function(event) {
+document.getElementById('lessonregister').addEventListener('submit', async function(event) {
     event.preventDefault();
+
+    let lessonArray = document.getElementById('lessonName').value.split(',');
+
     const formData = {
         courseId: document.getElementById('courseId').value,
         lessonId: document.getElementById('lessonId').value,
-        lessonName: document.getElementById('lessonName').value,
+        lessonName: lessonArray,
         lessonLink: document.getElementById('lessonLink').value,
         lessonTopics: document.getElementById('lessonTopics').value
     };
     
     try {
-        const response = await fetch('/api/course/v1/createLesson', {
+        const response = await fetch('/rest-api/course/v1/createLesson', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -18,6 +21,7 @@ document.getElementById('courseregister').addEventListener('submit', async funct
         });
 
         if (response.ok) {
+            alert("Lesson Added Successfully!");
             window.location.href = '/redirect';
         } else {
             const error = await response.text();

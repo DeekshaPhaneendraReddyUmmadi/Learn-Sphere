@@ -10,12 +10,12 @@
 <body>
     <header th:replace="~{/fragments/header :: header}"></header>
     <div class="form">
-        <form id="registrationForm" >
+        <form id="lessonregister" >
             <h1>Create a new Lesson</h1>
             <label for="courseId">Course ID</label><br>
             <input type="text" name="courseId" id="courseId" placeholder="Course ID" required /><br>
             
-            <label for="lessonId">Course ID</label><br>
+            <label for="lessonId">Lesson ID</label><br>
             <input type="text" name="lessonId" id="lessonId" placeholder="Lesson ID" required /><br>
 
             <label for="lessonName">Lesson Name</label><br>
@@ -25,7 +25,7 @@
             <input type="text" name="lessonTopics" id="lessonTopics" placeholder="Lesson Topic" required /><br>
             
             <label for="lessonLink">Lesson Video Link</label><br>
-            <input type="number" name="lessonLink" placeholder="Lesson Link" required /><br>
+            <input type="text" name="lessonLink" id="lessonLink" placeholder="Lesson Link" required /><br>
 
             <button class="r-btn" type="submit">Add Lesson</button>
         </form>
@@ -33,5 +33,6 @@
 
     <div id="message"></div>
     <footer th:replace="~{/fragments/footer :: footer}"></footer>
+    <script th:src="@{/js/lessonregister.js}"></script>
 </body>
 </html>
