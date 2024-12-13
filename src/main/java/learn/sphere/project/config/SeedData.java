@@ -1,8 +1,5 @@
 package learn.sphere.project.config;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -29,102 +26,29 @@ public class SeedData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // users
-        Account user1 = new Account("AliceJohnson", "alice.johnson@gmail.com", "pass", Role.STUDENT);
+        // Users
+        Account user1 = new Account("Alice Johnson", "alice.johnson@gmail.com", "pass", Role.STUDENT);
         usersService.save(user1);
 
-        Account user2 = new Account("JohnDoe", "john.doe@gmail.com", "pass", Role.TRAINER);
+        Account user2 = new Account("John Doe", "john.doe@gmail.com", "pass", Role.TRAINER);
         usersService.save(user2);
 
-        Account user3 = new Account("JaneSmith", "jane.smith@gmail.com", "pass", Role.ADMIN);
+        Account user3 = new Account("Jane Smith", "jane.smith@gmail.com", "pass", Role.ADMIN);
         usersService.save(user3);
 
-        //course
-
+        // Courses
         Course mathCourse = new Course(111L, "Math", 100.0);
         courseService.saveCourse(mathCourse);
 
         Course scienceCourse = new Course(112L, "Science", 150.0);
         courseService.saveCourse(scienceCourse);
 
-        List<String> lessons = new ArrayList<>();
-        lessons.add("Algebra");
-
-        // lesson
-        Lesson algebraLesson = new Lesson(1001L, 111L, lessons, "link1", "Algebra");
-        lessonService.saveLesson(algebraLesson);
-
-        lessons.clear();
-        lessons.add("Geometry");
-        
-        Lesson geometryLesson = new Lesson(1002L, 111L, lessons, "link2", "Geometry");
-        lessonService.saveLesson(geometryLesson);
-        
-        lessons.clear();
-        lessons.add("Biology");
-
-        Lesson biologyLesson = new Lesson(1003L, 112L, lessons, "link3", "Cell Biology");
-        lessonService.saveLesson(biologyLesson);
-
-
-        //new data
-
-
-        // Creating more courses
         Course historyCourse = new Course(113L, "History", 120.0);
         courseService.saveCourse(historyCourse);
 
         Course literatureCourse = new Course(114L, "Literature", 130.0);
         courseService.saveCourse(literatureCourse);
 
-        // Creating lessons for Math course
-        List<String> mathLessons = new ArrayList<>();
-        mathLessons.add("Trigonometry");
-        Lesson trigonometryLesson = new Lesson(1004L, 111L, mathLessons, "link4", "Trigonometry");
-        lessonService.saveLesson(trigonometryLesson);
-
-        mathLessons.clear();
-        mathLessons.add("Calculus");
-        Lesson calculusLesson = new Lesson(1005L, 111L, mathLessons, "link5", "Calculus");
-        lessonService.saveLesson(calculusLesson);
-
-        // Creating lessons for Science course
-        List<String> scienceLessons = new ArrayList<>();
-        scienceLessons.add("Physics");
-        Lesson physicsLesson = new Lesson(1006L, 112L, scienceLessons, "link6", "Physics");
-        lessonService.saveLesson(physicsLesson);
-
-        scienceLessons.clear();
-        scienceLessons.add("Chemistry");
-        Lesson chemistryLesson = new Lesson(1007L, 112L, scienceLessons, "link7", "Chemistry");
-        lessonService.saveLesson(chemistryLesson);
-
-        // Creating lessons for History course
-        List<String> historyLessons = new ArrayList<>();
-        historyLessons.add("World War I");
-        Lesson ww1Lesson = new Lesson(1008L, 113L, historyLessons, "link8", "World War I");
-        lessonService.saveLesson(ww1Lesson);
-
-        historyLessons.clear();
-        historyLessons.add("Renaissance");
-        Lesson renaissanceLesson = new Lesson(1009L, 113L, historyLessons, "link9", "Renaissance");
-        lessonService.saveLesson(renaissanceLesson);
-
-        // Creating lessons for Literature course
-        List<String> literatureLessons = new ArrayList<>();
-        literatureLessons.add("Shakespeare");
-        Lesson shakespeareLesson = new Lesson(1010L, 114L, literatureLessons, "link10", "Shakespeare");
-        lessonService.saveLesson(shakespeareLesson);
-
-        literatureLessons.clear();
-        literatureLessons.add("Poetry");
-        Lesson poetryLesson = new Lesson(1011L, 114L, literatureLessons, "link11", "Poetry");
-        lessonService.saveLesson(poetryLesson);
-
-
-        // few more 
-
-        // Creating more courses with different names
         Course computerScienceCourse = new Course(115L, "Computer Science", 200.0);
         courseService.saveCourse(computerScienceCourse);
 
@@ -134,76 +58,22 @@ public class SeedData implements CommandLineRunner {
         Course physicalEducationCourse = new Course(117L, "Physical Education", 80.0);
         courseService.saveCourse(physicalEducationCourse);
 
-        // Creating lessons for Computer Science course
-        List<String> csLessons = new ArrayList<>();
-        csLessons.add("Introduction to Programming");
-        Lesson introProgrammingLesson = new Lesson(1012L, 115L, csLessons, "link12", "Introduction to Programming");
-        lessonService.saveLesson(introProgrammingLesson);
-
-        csLessons.clear();
-        csLessons.add("Data Structures");
-        Lesson dataStructuresLesson = new Lesson(1013L, 115L, csLessons, "link13", "Data Structures");
-        lessonService.saveLesson(dataStructuresLesson);
-
-        csLessons.clear();
-        csLessons.add("Algorithms");
-        Lesson algorithmsLesson = new Lesson(1014L, 115L, csLessons, "link14", "Algorithms");
-        lessonService.saveLesson(algorithmsLesson);
-
-        // Creating lessons for Art course
-        List<String> artLessons = new ArrayList<>();
-        artLessons.add("Painting Techniques");
-        Lesson paintingTechniquesLesson = new Lesson(1015L, 116L, artLessons, "link15", "Painting Techniques");
-        lessonService.saveLesson(paintingTechniquesLesson);
-
-        artLessons.clear();
-        artLessons.add("Sculpture Basics");
-        Lesson sculptureBasicsLesson = new Lesson(1016L, 116L, artLessons, "link16", "Sculpture Basics");
-        lessonService.saveLesson(sculptureBasicsLesson);
-
-        // Creating lessons for Physical Education course
-        List<String> peLessons = new ArrayList<>();
-        peLessons.add("Fitness Training");
-        Lesson fitnessTrainingLesson = new Lesson(1017L, 117L, peLessons, "link17", "Fitness Training");
-        lessonService.saveLesson(fitnessTrainingLesson);
-
-        peLessons.clear();
-        peLessons.add("Team Sports");
-        Lesson teamSportsLesson = new Lesson(1018L, 117L, peLessons, "link18", "Team Sports");
-        lessonService.saveLesson(teamSportsLesson);
-
-
-        // List<String> csLessons = new ArrayList<>();
-
-        // Add a lesson on Introduction to Programming
-        // csLessons.add("Introduction to Programming");
-        // Lesson introProgrammingLesson = new Lesson(1004L, 113L, csLessons, "link4", "Introduction to Programming");
-        // lessonService.saveLesson(introProgrammingLesson);
-        
-        // Clear the list and add a lesson on Object-Oriented Programming
-        csLessons.clear();
-        csLessons.add("Object-Oriented Programming");
-        Lesson oopLesson = new Lesson(1055L, 115L, csLessons, "link5", "Object-Oriented Programming");
-        lessonService.saveLesson(oopLesson);
-        
-        // Clear the list and add a lesson on Web Development
-        csLessons.clear();
-        csLessons.add("Web Development");
-        Lesson webDevelopmentLesson = new Lesson(1056L, 115L, csLessons, "link6", "Web Development");
-        lessonService.saveLesson(webDevelopmentLesson);
-        
-        // Clear the list and add a lesson on Database Management
-        csLessons.clear();
-        csLessons.add("Database Management");
-        Lesson databaseManagementLesson = new Lesson(1057L, 115L, csLessons, "link7", "Database Management");
-        lessonService.saveLesson(databaseManagementLesson);
-        
-        // Clear the list and add a lesson on Software Engineering
-        csLessons.clear();
-        csLessons.add("Software Engineering");
-        Lesson softwareEngineeringLesson = new Lesson(1058L, 115L, csLessons, "link8", "Software Engineering");
-        lessonService.saveLesson(softwareEngineeringLesson);
-
+        // Lessons
+        lessonService.saveLesson(new Lesson(1001L, 111L, "Algebra", "https://www.youtube.com/watch?v=aS0t9HTO5V4", "Algebra Topics", "The examples were very helpful. Thank you!, I found this lesson a bit challenging, but I enjoyed it."));
+        lessonService.saveLesson(new Lesson(1002L, 111L, "Geometry", "https://www.youtube.com/watch?v=S2xyFQlpzIY", "Geometry Topics", "good,Great introduction! I learned a lot."));
+        lessonService.saveLesson(new Lesson(1003L, 112L, "Biology", "https://www.youtube.com/watch?v=3tisOnOkwzo", "Cell Biology", "good,The examples were very helpful. Thank you!"));
+        lessonService.saveLesson(new Lesson(1004L, 112L, "Physics", "https://www.youtube.com/watch?v=ZAqIoDhornk", "Physics Fundamentals", "good, I found this lesson a bit challenging, but I enjoyed it."));
+        lessonService.saveLesson(new Lesson(1005L, 113L, "Chemistry", "https://www.youtube.com/watch?v=5iTOphGnCtg", "Chemistry Basics", "good, I found this lesson a bit challenging, but I enjoyed it."));
+        lessonService.saveLesson(new Lesson(1006L, 113L, "World War I", "https://www.youtube.com/watch?v=dHSQAEam2yc", "WWI Overview", "good,The examples were very helpful. Thank you!"));
+        lessonService.saveLesson(new Lesson(1007L, 113L, "Renaissance", "https://www.youtube.com/watch?v=Om1jvUzVAtE", "Renaissance Era", "good, The examples were very helpful. Thank you!, I found this lesson a bit challenging, but I enjoyed it."));
+        lessonService.saveLesson(new Lesson(1008L, 114L, "Shakespeare", "https://www.youtube.com/watch?v=y94RsqtEADQ", "Shakespeare's Works", "good,The examples were very helpful. Thank you!, I found this lesson a bit challenging, but I enjoyed it."));
+        lessonService.saveLesson(new Lesson(1009L, 114L, "Poetry", "https://www.youtube.com/watch?v=JwhouCNq-Fc", "Poetry Fundamentals", "good,The examples were very helpful. Thank you!, I found this lesson a bit challenging, but I enjoyed it."));
+        lessonService.saveLesson(new Lesson(1010L, 115L, "Programming Basics", "https://www.youtube.com/watch?v=zOjov-2OZ0E", "Introduction to Programming","The examples were very helpful. Thank you!, I found this lesson a bit challenging, but I enjoyed it."));
+        lessonService.saveLesson(new Lesson(1011L, 115L, "Data Structures", "https://www.youtube.com/watch?v=8hly31xKli0", "Data Structures Concepts","The examples were very helpful. Thank you!, I found this lesson a bit challenging, but I enjoyed it."));
+        lessonService.saveLesson(new Lesson(1012L, 115L, "Algorithms", "https://www.youtube.com/watch?v=8hly31xKli0", "Algorithm Design","good, The examples were very helpful. Thank you!, I found this lesson a bit challenging, but I enjoyed it."));
+        lessonService.saveLesson(new Lesson(1013L, 116L, "Painting Techniques", "https://www.youtube.com/watch?v=cDzcoyeaRKI", "Basic Painting Skills", "good, The examples were very helpful. Thank you!, I found this lesson a bit challenging, but I enjoyed it."));
+        lessonService.saveLesson(new Lesson(1014L, 116L, "Sculpture Basics", "https://www.youtube.com/watch?v=1n7apcgQiz0", "Introduction to Sculpting","The examples were very helpful. Thank you!, I found this lesson a bit challenging, but I enjoyed it."));
+        lessonService.saveLesson(new Lesson(1015L, 117L, "Fitness Training", "https://www.youtube.com/watch?v=37UhELFvPec", "Exercise Techniques", "good,Great introduction! I learned a lot."));
+        lessonService.saveLesson(new Lesson(1016L, 117L, "Team Sports", "https://www.youtube.com/watch?v=PMpZukqYpH4", "Teamwork in Sports","The examples were very helpful. Thank you!, I found this lesson a bit challenging, but I enjoyed it."));
     }
-
 }

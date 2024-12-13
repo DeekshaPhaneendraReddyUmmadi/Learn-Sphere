@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -20,7 +18,11 @@ public class Lesson {
     
     private Long courseId;
     
-    private List<String> lessonName;
+    private String lessonName;
+    
     private String lessonLink;
+    
     private String lessonTopics;
+    
+    private String comments;
 }

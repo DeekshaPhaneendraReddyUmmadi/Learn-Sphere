@@ -5,25 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trainer</title>
     <head th:replace="~{/fragments/head :: head}"></head>
-    <style>
-        .trainerlist{
-            padding-top: 100px  ;
-            align-items: center;
-            height: 73vh;
-        }
-        li{
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" th:href="@{css/trainerHome.css}">
 </head>
 <body>
     <header th:replace="~{/fragments/header :: header}"></header>
-            <ul class="trainerlist">
-                <li>Welcome Trainer</li><br>
-                <li><a href="/createCourse">Add Course</a></li><br>
-                <li><a href="/createLesson">Add Lesson</a></li><br>
-                <li><a href="/courses">View Course</a></li>
-            </ul><br>
+            
+    <ul class="trainerlist">
+        <div>
+            <li><h2>Welcome Trainer</h2></li><br>
+        </div>
+        <div>
+            <li><a href="/createCourse">Add Course</a></li><br>
+            <li><a href="/createLesson">Add Lesson</a></li><br>
+            <li><a href="/courses">View Course</a></li>
+        </div>
+    </ul><br>
+
     <footer th:replace="~{/fragments/footer :: footer}"></footer>
 </body>
 </html>

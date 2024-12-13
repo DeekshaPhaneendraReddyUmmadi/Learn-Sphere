@@ -41,6 +41,10 @@ public class SecurityConfig {
                      .passwordParameter("password")
                      .defaultSuccessUrl("/redirect", true)
                      .failureUrl("/login")
+            ).logout(logout -> 
+                logout.logoutUrl("/logout") // Specify the logout URL
+                    .logoutSuccessUrl("/") // Specify the logout success URL
+                    .permitAll() // Allow everyone to access the logout URL
             )
             .csrf(csrf -> csrf.disable())
             .headers(headers -> headers.frameOptions(frame -> frame.disable()));

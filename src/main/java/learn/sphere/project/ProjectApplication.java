@@ -12,5 +12,4 @@ public class ProjectApplication {
 		SpringApplication.run(ProjectApplication.class, args);
 		log.info("Spring boot application is started.");
 	}
-
 }

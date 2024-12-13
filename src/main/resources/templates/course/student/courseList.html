@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course List</title>
+    <head th:replace="~{/fragments/head :: head}"></head>
+    <link rel="stylesheet" th:href="@{/css/courseList.css}">
+</head>
+<body>
+    <header th:replace="~{/fragments/header :: header}"></header>
+    <div class="container">
+        <h2>Course List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Course ID</th>
+                    <th>Course Name</th>
+                    <th>Course Price</th>
+                    <th>Lesson Names</th>
+                    <th>Buy Course</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="course : ${courses}">
+                    <td th:text="${course.courseId}"></td>
+                    <td th:text="${course.courseName}"></td>
+                    <td th:text="${course.coursePrice}"></td>
+                    
+                    <td th:text="${course.lessonNames}"></td>
+                    <td><button>Buy</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <footer th:replace="~{/fragments/footer :: footer}"></footer>
+</body>
+</html>

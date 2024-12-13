@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html  lang="en"
-xmlns:th="http://www.thymeleaf.org"
-xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
   <link rel="stylesheet" th:href="@{/css/header.css}">
 </head>
 <body>
   <header>
-    <a href="/" class="logo"><span>Learn Sphere</span>
-    </a>
+    <a href="/" class="logo"><span>Learn Sphere</span></a>
 
     <ul class="navbar">
       <li><a href="/" class="active">Home</a></li>
-      <li><a href="#" >About</a></li>
-      <li><a href="#" >Contact</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
 
     <div class="main">
@@ -23,8 +22,11 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
       <span sec:authorize="!isAuthenticated()">
         <a href="/register">Register</a>
       </span>
+      <span sec:authorize="isAuthenticated()">
+        <a href="/logout">Logout</a>
+      </span>
       <div class="" id="menu-icon">
-        <img class="icn change" th:src="@{/images/menu.png}" alt="login avatar" />
+        <img class="icn change" th:src="@{/images/menu.png}" alt="menu icon" />
       </div>
     </div>
   </header>

@@ -1,5 +1,6 @@
 learn\sphere\project\controller\restcontrollers\UsersRestController.class
 learn\sphere\project\service\LessonService.class
+learn\sphere\project\repository\UserCoursesRepository.class
 learn\sphere\project\dto\CourseLessonDto.class
 learn\sphere\project\service\UsersService.class
 learn\sphere\project\model\Course.class
@@ -8,15 +9,20 @@ learn\sphere\project\controller\controllers\UsersController.class
 learn\sphere\project\model\Account.class
 learn\sphere\project\repository\LessonRepository.class
 learn\sphere\project\security\UserPrinciple.class
+learn\sphere\project\dto\LessonDto.class
 learn\sphere\project\repository\CourseRepository.class
 learn\sphere\project\controller\restcontrollers\CourseRestController.class
 learn\sphere\project\repository\UsersRepository.class
 learn\sphere\project\model\CourseLesson.class
+learn\sphere\project\model\UserCourses.class
+learn\sphere\project\dto\CoursePurchasedLessonsDto.class
 learn\sphere\project\ProjectApplication.class
 learn\sphere\project\controller\controllers\CourseController$1.class
 learn\sphere\project\util\constant\Role.class
 learn\sphere\project\security\SecurityConfig.class
+learn\sphere\project\service\UserCoursesService.class
 learn\sphere\project\security\MyUserDetailsService.class
+learn\sphere\project\dto\LessonsViewDto.class
 learn\sphere\project\service\CourseLessonService.class
 learn\sphere\project\repository\CourseLessonRepository.class
 learn\sphere\project\config\SeedData.class

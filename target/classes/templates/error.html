@@ -32,26 +32,3 @@
     <footer th:replace="~{/fragments/footer :: footer}"></footer>
 </body>
 </html>
-
-
-<!-- 
-        List<CourseLessonDto> rawResults = courseLessonRepository.findAllCoursesWithLessons();
-        Map<Long, CourseLessonDto> courseMap = new HashMap<>();
-
-        for (CourseLessonDto dto : rawResults) {
-            if (!courseMap.containsKey(dto.getCourseId())) {
-                courseMap.put(dto.getCourseId(), dto);
-            } else {
-                CourseLessonDto existingDto = courseMap.get(dto.getCourseId());
-                
-                // Join existing lesson names with a comma and add new lesson names
-                String existingLessons = String.join(", ", existingDto.getLessonNames());
-                String newLessons = String.join(", ", dto.getLessonNames());
-                
-                // Combine both lesson names with a comma
-                existingDto.setLessonNames(Arrays.asList((existingLessons + ", " + newLessons).split(", ")));
-            }
-        }
-
-        List<CourseLessonDto> finalResults = new ArrayList<>(courseMap.values());
--->

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course List</title>
+    <link rel="stylesheet" th:href="@{/css/lessonView.css}">
+    <head th:replace="~{/fragments/head :: head}"></head>
+</head>
+<body>
+    <header th:replace="~{/fragments/header :: header}"></header>
+    
+    <main class="border-layer">
+        <section class="top-layer">
+            <h2>Lesson List:</h2><br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Lesson ID</th>
+                        <th>Lesson Name</th>
+                        <th>Lesson Topic</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="lesson : ${lessons}">
+                        <td th:text="${lesson.lessonId}"></td>
+                        <td th:text="${lesson.lessonName}"></td>
+                        <td th:text="${lesson.lessonTopic}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="middle-layer">
+            <h2>Lesson Video:</h2><br>
+            
+            <iframe width="560" height="315" 
+                    th:src="'https://www.youtube.com/embed/' + ${lessons.lessonLink}" 
+                    frameborder="0" allowfullscreen></iframe>
+
+        </section>
+
+        <section class="bottom-layer">
+            <h2>Leave a comment here:</h2><br>
+            <form action="#" th:action="@{/comments}" method="post">
+                <input type="text" name="commentText" placeholder="Enter your comment" required />
+                <button type="submit">Submit</button>
+            </form>
+            <div class="comments">
+                <div th:each="comment : ${lessons}" class="comment">
+                    <p th:text="${comment.cmt}"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer th:replace="~{/fragments/footer :: footer}"></footer>
+</body>
+</html>

@@ -4,8 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
 import learn.sphere.project.util.constant.Role;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,17 +13,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Account {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @NotEmpty(message = "Name missing")
+    
     private String name;
 
-    @Email(message = "Invalid email")
-    @NotEmpty(message = "Email missing")
     private String email;
 
-    @NotEmpty(message = "Password missing")
     private String password;
 
     private Role role;
@@ -36,5 +30,4 @@ public class Account {
         this.password = password;
         this.role = role;
     }
-
 }

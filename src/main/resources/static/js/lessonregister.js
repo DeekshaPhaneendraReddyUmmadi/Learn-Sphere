@@ -1,12 +1,9 @@
 document.getElementById('lessonregister').addEventListener('submit', async function(event) {
     event.preventDefault();
-
-    let lessonArray = document.getElementById('lessonName').value.split(',');
-
     const formData = {
         courseId: document.getElementById('courseId').value,
         lessonId: document.getElementById('lessonId').value,
-        lessonName: lessonArray,
+        lessonName: document.getElementById('lessonName').value,
         lessonLink: document.getElementById('lessonLink').value,
         lessonTopics: document.getElementById('lessonTopics').value
     };

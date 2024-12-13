@@ -146,7 +146,7 @@ ul.navbar {
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 595px) {
 
   .logo span {
     font-size: 1.5rem;

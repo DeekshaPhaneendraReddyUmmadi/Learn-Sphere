@@ -1,9 +1,6 @@
 package learn.sphere.project.service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,22 +25,7 @@ public class CourseLessonService {
     }
 
     public List<CourseLessonDto> getAllCoursesWithLessons() {
-        // return courseLessonRepository.findAllCoursesWithLessons();
-        List<CourseLessonDto> rawResults = courseLessonRepository.findAllCoursesWithLessons();
-        Map<Long, CourseLessonDto> courseMap = new HashMap<>();
-        
-        for (CourseLessonDto dto : rawResults) {
-            if (!courseMap.containsKey(dto.getCourseId())) {
-                courseMap.put(dto.getCourseId(), dto);
-                
-            } else {
-                CourseLessonDto existingDto = courseMap.get(dto.getCourseId());
-                existingDto.getLessonNames().addAll(dto.getLessonNames());
-            }
-        }
-
-        List<CourseLessonDto> finalResults = new ArrayList<>(courseMap.values());
-
-        return finalResults;
+        return courseLessonRepository.findAllCoursesWithLessons();
     }
+
 }
