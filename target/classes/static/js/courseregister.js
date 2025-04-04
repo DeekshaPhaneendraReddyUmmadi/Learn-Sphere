@@ -3,7 +3,7 @@ document.getElementById('courseregister').addEventListener('submit', async funct
     const formData = {
         courseId: document.getElementById('courseId').value,
         courseName: document.getElementById('courseName').value,
-        coursePrice: document.getElementById('coursePrice').value,
+        coursePrice: document.getElementById('coursePrice').value
     };
     
 

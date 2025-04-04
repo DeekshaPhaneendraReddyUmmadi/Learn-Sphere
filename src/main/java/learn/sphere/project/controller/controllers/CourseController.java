@@ -4,6 +4,7 @@ import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+// import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+// import org.springframework.web.bind.annotation.RequestParam;
 
 import learn.sphere.project.dto.CourseLessonDto;
 import learn.sphere.project.dto.CoursePurchasedLessonsDto;
@@ -23,7 +25,10 @@ import learn.sphere.project.model.Lesson;
 import learn.sphere.project.service.CourseLessonService;
 import learn.sphere.project.service.LessonService;
 import learn.sphere.project.service.UserCoursesService;
+// import learn.sphere.project.service.CourseService;
 import learn.sphere.project.service.UsersService;
+// import learn.sphere.project.dto.CourseLessonDto;
+// import learn.sphere.project.dto.CoursePurchasedLessonsDto;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -70,6 +75,7 @@ public class CourseController {
         Optional<Account> optionalAccount = usersService.getDetailsByEmail(authUser);
             if(optionalAccount.isPresent()) {
                 Account account = optionalAccount.get();
+                // System.out.println(account.toString());
                 model.addAttribute( "account", account);
                 return  "/course/trainer/trainerHome";
         }else{
@@ -157,6 +163,7 @@ public class CourseController {
         return "/course/student/courseList";
     }
 
+
     @GetMapping("/mycourses")
     @PreAuthorize("isAuthenticated()")
     public String purchasedList(Model model, Principal principal) {
@@ -177,6 +184,8 @@ public class CourseController {
         return "/course/student/purchasedcourse";
     }
 
+    // working properly but need to update this method 
+    // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
     @GetMapping("/viewLesson/{lessonid}")
     @PreAuthorize("isAuthenticated()")
     public String viewLesson(@PathVariable("lessonid") Long lessonid, Model model, Principal principal) {
@@ -204,7 +213,7 @@ public class CourseController {
             viewDtos.setCmt(Collections.emptyList()); 
         }
         log.info(viewDtos.toString());
-        model.addAttribute("lessons", viewDtos); // Changed to "lesson" for clarity
+        model.addAttribute("lessons", viewDtos);
         return "/course/student/lessonView";
     }
     

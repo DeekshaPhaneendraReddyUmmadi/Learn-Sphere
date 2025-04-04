@@ -35,6 +35,4 @@ public class CoursePurchasedLessonsDto {
         this.lessonIds = lessonIds;
         this.lessonNames = lessonNames;
     }
-
-    
 }

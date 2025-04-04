@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course List</title>
     <link rel="stylesheet" th:href="@{/css/lessonView.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
     <head th:replace="~{/fragments/head :: head}"></head>
 </head>
 <body>
@@ -23,37 +24,118 @@
                 </thead>
                 <tbody>
                     <tr th:each="lesson : ${lessons}">
-                        <td th:text="${lesson.lessonId}"></td>
+                        <td th:text="${lesson.lessonId}" id="lessonId"></td>
                         <td th:text="${lesson.lessonName}"></td>
                         <td th:text="${lesson.lessonTopic}"></td>
                     </tr>
                 </tbody>
             </table>
         </section>
+        <br>
 
         <section class="middle-layer">
             <h2>Lesson Video:</h2><br>
-            
-            <iframe width="560" height="315" 
+            <div class="iframe-container">
+                <iframe 
                     th:src="'https://www.youtube.com/embed/' + ${lessons.lessonLink}" 
-                    frameborder="0" allowfullscreen></iframe>
-
+                    frameborder="0" 
+                    allowfullscreen></iframe>
+            </div>
         </section>
-
+        <br>
         <section class="bottom-layer">
             <h2>Leave a comment here:</h2><br>
+            <form id="comments-form" method="post">
+                <input type="hidden" id="lessonId" value="${lesson.lessonId}" />
+                <input type="text" name="commentText" id="cmt" placeholder="Enter your comment" required /><br>
+                <button type="submit">Submit</button>
+            </form>
+            <br>
+            <div class="comments">
+                <div th:each="comment : ${lessons.cmt}" class="comment">
+                    <p th:text="${comment}"></p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    <footer th:replace="~{/fragments/footer :: footer}"></footer>
+    <script th:src="@{/js/lessonView.js}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course List</title>
+    <head th:replace="~{/fragments/head :: head}"></head>
+    <link rel="stylesheet" th:href="@{/css/lessonView.css}">
+</head>
+<body>
+    <header th:replace="~{/fragments/header :: header}"></header>
+    <div class="border-layer">
+        <div class="top-layer">
+            <h2>Lesson List:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Lesson ID</th>
+                        <th>Lesson Name</th>
+                        <th>Lesson Topic</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="lesson : ${lessons}">
+                        <td th:text="${lesson.lessonId}"></td>
+                        <td th:text="${lesson.lessonName}"></td>
+                        <td th:text="${lesson.lessonTopic}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="middle-layer">
+            <h2>Lesson Vedio:</h2>
+            <iframe width="560" height="315" 
+            th:src="'https://www.youtube.com/embed/' + ${videoId}" 
+            frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <div class="bottom-layer">
+            <h2>Leave a comment here:</h2>
             <form action="#" th:action="@{/comments}" method="post">
                 <input type="text" name="commentText" placeholder="Enter your comment" required />
                 <button type="submit">Submit</button>
             </form>
             <div class="comments">
-                <div th:each="comment : ${lessons}" class="comment">
-                    <p th:text="${comment.cmt}"></p>
+                <div th:each="comment : ${comments}" class="comment">
+                    <p th:text="${comment.text}"></p>
                 </div>
             </div>
-        </section>
-    </main>
-
+        </div>
+    </div>-section
+    
+    
     <footer th:replace="~{/fragments/footer :: footer}"></footer>
 </body>
-</html>
+</html> -->
+
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
+<!-- <div class="bottom-layer">
+    <h2>Leave a comment here:</h2>
+    <div class="comments">
+
+    </div>
+</div> -->

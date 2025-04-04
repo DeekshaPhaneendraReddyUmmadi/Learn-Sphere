@@ -16,6 +16,12 @@
     </ul>
 
     <div class="main">
+      <span sec:authorize="hasRole('ROLE_STUDENT')">
+        <a href="/student">Student Dashboard</a>
+      </span>
+      <span sec:authorize="hasRole('ROLE_TRAINER')">
+        <a href="/trainer">Trainer Dashboard</a>
+      </span>
       <span sec:authorize="!isAuthenticated()">
         <a href="/login" class="user">Sign In</a>
       </span>

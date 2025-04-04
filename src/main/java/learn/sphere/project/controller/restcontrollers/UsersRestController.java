@@ -20,6 +20,7 @@ public class UsersRestController {
     @PostMapping("/register")
     public ResponseEntity<String> register_user(@RequestBody Account user) {
         if(usersService.save(user) != null){
+            // return "User added successfully.";
             return new ResponseEntity<>("Lesson created successfully", HttpStatus.CREATED);
         }
         return new ResponseEntity<>("User creation failed", HttpStatus.BAD_REQUEST);

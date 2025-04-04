@@ -42,3 +42,21 @@ td button:hover {
     box-shadow: 0px 0px  10px black;
     align-items: center;
 }
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+}
+
+.success {
+    color: green;
+    border-color: green;
+}
+
+.error {
+    color: red;
+    border-color: red;
+}

@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     window.location.href = '/';
                 } else {
                     const error = await response.text();
-                    document.getElementById('message').innerText = 'Registration failed: ' + error; // Display error message
+                    document.getElementById('message').innerText = 'Registration failed: ' + error;
                 }
             } catch (error) {
-                document.getElementById('message').innerText = 'Error: ' + error.message; // Handle network errors
+                document.getElementById('message').innerText = 'Error: ' + error.message;
             }
         });
     } else {

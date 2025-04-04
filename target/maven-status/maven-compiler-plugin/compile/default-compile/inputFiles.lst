@@ -1,29 +1,23 @@
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\config\SeedData.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\controller\controllers\CourseController.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\controller\controllers\UsersController.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\controller\restcontrollers\CourseRestController.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\controller\restcontrollers\UsersRestController.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\dto\CourseLessonDto.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\dto\CoursePurchasedLessonsDto.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\dto\LessonDto.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\dto\LessonsViewDto.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\model\Account.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\model\Course.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\model\CourseLesson.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\model\Lesson.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\model\UserCourses.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\ProjectApplication.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\repository\CourseLessonRepository.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\repository\CourseRepository.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\repository\LessonRepository.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\repository\UserCoursesRepository.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\repository\UsersRepository.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\security\MyUserDetailsService.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\security\SecurityConfig.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\security\UserPrinciple.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\service\CourseLessonService.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\service\CourseService.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\service\LessonService.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\service\UserCoursesService.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\service\UsersService.java
-C:\Users\phane\Desktop\internship\kodnest\projects\project zip files\project v1.1.3\src\main\java\learn\sphere\project\util\constant\Role.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\config\SeedData.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\controller\controllers\CourseController.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\controller\controllers\UsersController.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\controller\restcontrollers\CourseRestController.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\controller\restcontrollers\UsersRestController.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\dto\CourseLessonDto.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\model\Account.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\model\Course.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\model\CourseLesson.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\model\Lesson.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\ProjectApplication.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\repository\CourseLessonRepository.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\repository\CourseRepository.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\repository\LessonRepository.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\repository\UsersRepository.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\security\MyUserDetailsService.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\security\SecurityConfig.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\security\UserPrinciple.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\service\CourseLessonService.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\service\CourseService.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\service\LessonService.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\service\UsersService.java
+c:\Users\phane\Desktop\internship\kodnest\projects\project\src\main\java\learn\sphere\project\util\constant\Role.java

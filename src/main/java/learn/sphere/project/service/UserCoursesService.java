@@ -27,5 +27,10 @@ public class UserCoursesService {
     public Optional<UserCourses> findUser(Long userid){
         return userCoursesRepository.findByUserId(userid);
     }
+    
+    public Optional<UserCourses> findUserCourse(Long userId, Long courseId) {
+        return userCoursesRepository.findByUserIdAndCourseId(userId, courseId);
+    }
+    
 }
     

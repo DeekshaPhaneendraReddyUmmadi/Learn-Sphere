@@ -16,7 +16,7 @@
             <h1>Login</h1>
 
             <label for="email">Name :</label><br>
-            <input type="email" name="email" placeholder="email" required /><br> <!-- Changed from email to name -->
+            <input type="email" name="email" placeholder="email" required /><br>
             
             <label for="password">Password :</label><br>
             <input type="password" name="password" placeholder="Password" required /><br>
@@ -29,69 +29,3 @@
     <script th:src="@{/js/login.js}"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <head th:replace="~{/fragments/head :: head}"></head>
-</head>
-<body>
-    <header th:replace="~{/fragments/header :: header}"></header>
-    <div class="form">
-        <form id="login" 
-                action="#"
-                th:action="@{/login}"
-                method="post">
-            <h1>Login</h1>
-
-            <label for="email">Email :</label><br>
-            <input type="email" name="email" placeholder="Email" required /><br>
-            
-            <label for="password">Password :</label><br>
-            <input type="password" name="password" placeholder="Password" required /><br>
-
-            <button class="r-btn" type="submit">Log In</button>
-        </form>
-    </div>
-
-    <div id="message"></div> 
-    <footer th:replace="~{/fragments/footer :: footer}"></footer>
-</body>
-</html> -->

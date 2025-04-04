@@ -48,12 +48,14 @@ public interface UserCoursesRepository extends JpaRepository<UserCourses, Long>{
             existingDto.getLessonIds().add(lessonId);
             existingDto.getLessonNames().add(lessonName);
         }
-
         List<CoursePurchasedLessonsDto> dtos2 = new ArrayList<>(courseMap.values());
         return dtos2;
     }
 
     
     Optional<UserCourses> findByUserId(Long userid);
+
+
+    Optional<UserCourses> findByUserIdAndCourseId(Long userId, Long courseId);
     
 }

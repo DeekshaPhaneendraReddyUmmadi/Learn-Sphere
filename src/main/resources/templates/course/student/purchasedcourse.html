@@ -30,7 +30,7 @@
                         <span>
                             <span th:each="lesson, iterStat : ${course.lessonIds}">
                                 <a th:href="@{/viewLesson/{lessonid}(lessonid=${lesson})}" th:text="${course.lessonNames[iterStat.index]}"></a>
-                                <span th:if="${!iterStat.last}">, </span> 
+                                <span th:if="${!iterStat.last}">, </span>
                             </span>
                         </span>
                     </td>
@@ -38,7 +38,6 @@
             </tbody>
         </table>
     </div>
-    
     <footer th:replace="~{/fragments/footer :: footer}"></footer>
 </body>
 </html>

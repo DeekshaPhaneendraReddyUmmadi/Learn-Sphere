@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -9,6 +8,7 @@
 </head>
 <body>
     <header th:replace="~{/fragments/header :: header}"></header>
+    <div id="message"></div>
     <div class="form">
         <form id="lessonregister" >
             <h1>Create a new Lesson</h1>
@@ -31,7 +31,7 @@
         </form>
     </div>
 
-    <div id="message"></div>
+    
     <footer th:replace="~{/fragments/footer :: footer}"></footer>
     <script th:src="@{/js/lessonregister.js}"></script>
 </body>

@@ -11,7 +11,7 @@ import learn.sphere.project.model.Account;
 
 public class UserPrinciple implements UserDetails {
 
-    private final Account user; // Make this final
+    private final Account user;
 
     public UserPrinciple(Account user) {
         this.user = user;

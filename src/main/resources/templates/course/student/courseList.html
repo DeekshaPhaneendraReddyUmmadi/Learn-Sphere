@@ -9,6 +9,7 @@
 </head>
 <body>
     <header th:replace="~{/fragments/header :: header}"></header>
+    <div id="message" class="message"></div>
     <div class="container">
         <h2>Course List</h2>
         <table>
@@ -26,14 +27,27 @@
                     <td th:text="${course.courseId}"></td>
                     <td th:text="${course.courseName}"></td>
                     <td th:text="${course.coursePrice}"></td>
-                    
                     <td th:text="${course.lessonNames}"></td>
-                    <td><button>Buy</button></td>
+                    <td>
+                        <button th:id="'buy-button-' + ${course.courseId}" 
+                                th:data-courseid="${course.courseId}" 
+                                class="buy-button">Buy</button>
+                    </td>
+                    <!-- <td>
+                        <button class="purchase-button" data-course-id="${course.courseId}" onclick="purchase(this.dataset.courseId)">Buy</button>
+                    </td> -->
+                    
                 </tr>
             </tbody>
         </table>
     </div>
     
     <footer th:replace="~{/fragments/footer :: footer}"></footer>
+    <script th:src="@{/js/courseList.js}"></script>
 </body>
 </html>
+
+            <!-- <td><button id="cid" value="${course.courseId}" onclick="purchase(this.value)">Buy</button></td> -->
+            <!-- <td><a href="#" onclick="purchase(${course.courseId}); return false;">Buy</a></td> -->
+            <!-- <td><button onclick="purchase(${course.courseId})">Buy</button></td> -->
+            <!-- <td><button onclick="purchase()">Buy</button></td> -->

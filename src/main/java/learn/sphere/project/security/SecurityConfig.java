@@ -8,6 +8,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -47,8 +48,8 @@ public class SecurityConfig {
                     .permitAll() // Allow everyone to access the logout URL
             )
             .csrf(csrf -> csrf.disable())
-            .headers(headers -> headers.frameOptions(frame -> frame.disable()));
-            // .httpBasic(Customizer.withDefaults());
+            .headers(headers -> headers.frameOptions(frame -> frame.disable()))
+            .httpBasic(Customizer.withDefaults());
         return http.build();
     }
 

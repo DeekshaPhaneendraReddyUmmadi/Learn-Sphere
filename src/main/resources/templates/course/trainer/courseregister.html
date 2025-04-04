@@ -8,6 +8,7 @@
 </head>
 <body>
     <header th:replace="~{/fragments/header :: header}"></header>
+    <div id="message"></div>
     <div class="form">
         <form id="courseregister">
             <h1>Create a new Course!</h1>
@@ -24,7 +25,7 @@
         </form>
     </div>
 
-    <div id="message"></div>
+    <!-- <div id="message"></div> -->
     <footer th:replace="~{/fragments/footer :: footer}"></footer>
     <script th:src="@{/js/courseregister.js}"></script>
 </body>
